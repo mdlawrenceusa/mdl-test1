@@ -1,4 +1,4 @@
-
+#Original Code Copyright AWS / James Beswick
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
@@ -27,8 +27,8 @@ new Vue({
       // var image = new Image()
       let reader = new FileReader()
       reader.onload = (e) => {
-        console.log('length: ', e.target.result.includes('data:image/jpeg'))
-        if (!e.target.result.includes('data:image/jpeg')) {
+        console.log('length: ', e.target.result.includes('data:video/mpeg'))
+        if (!e.target.result.includes('data:bideo/mpeg')) {
         //  return alert('Wrong file type - JPG only.')
         }
         if (e.target.result.length > MAX_IMAGE_SIZE) {
@@ -56,7 +56,7 @@ new Vue({
       for (var i = 0; i < binary.length; i++) {
         array.push(binary.charCodeAt(i))
       }
-      let blobData = new Blob([new Uint16Array(array)], {type: 'image/jpeg'})
+      let blobData = new Blob([new Uint8Array(array)], {type: 'video/mpeg'})
       console.log('Uploading to: ', response.data.uploadURL)
       const result = await fetch(response.data.uploadURL, {
         method: 'PUT',
