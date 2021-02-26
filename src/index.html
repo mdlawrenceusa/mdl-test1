@@ -27,8 +27,8 @@ new Vue({
       // var image = new Image()
       let reader = new FileReader()
       reader.onload = (e) => {
-        console.log('length: ', e.target.result.includes('data:image/jpeg'))
-        if (!e.target.result.includes('data:image/jpeg')) {
+        console.log('length: ', e.target.result.includes('data:video/mpeg'))
+        if (!e.target.result.includes('data:video/mpeg')) {
         //  return alert('Wrong file type - JPG only.')
         }
         if (e.target.result.length > MAX_IMAGE_SIZE) {
@@ -56,7 +56,7 @@ new Vue({
       for (var i = 0; i < binary.length; i++) {
         array.push(binary.charCodeAt(i))
       }
-      let blobData = new Blob([new Uint8Array(array)], {type: 'image/jpeg'})
+      let blobData = new Blob([new Uint8Array(array)], {type: 'video/mpeg'})
       console.log('Uploading to: ', response.data.uploadURL)
       const result = await fetch(response.data.uploadURL, {
         method: 'PUT',
@@ -130,6 +130,6 @@ img {
       <button v-if="!uploadURL" @click="removeImage">Remove video</button>
       <button v-if="!uploadURL" @click="uploadImage">Upload video</button>
     </div>
-    <h2 v-if="uploadURL">Success! Image uploaded to bucket.</h2>
+    <h2 v-if="uploadURL">Success! Video uploaded to bucket.</h2>
 </div>
 
