@@ -32,7 +32,7 @@ new Vue({
         //  return alert('Wrong file type - JPG only.')
         }
         if (e.target.result.length > MAX_IMAGE_SIZE) {
-         // return alert('Image is loo large - 1Mb maximum')
+         return alert('Image is loo large - 100Mb maximum')
         }
         this.image = e.target.result
       }
