@@ -126,7 +126,17 @@ img {
       <input type="file" @change="onFileChange">
     </div>
     <div v-else>
-      <img :src="image" />
+    <!--  <img :src="image" /> -->
+
+
+<video width="300" controls autoplay >
+  <source :src="image" type="video/mp4">
+
+  Your browser does not support HTML video.
+</video>
+
+
+
       <button v-if="!uploadURL" @click="removeImage">Remove video</button>
       <button v-if="!uploadURL" @click="uploadImage">Upload video</button>
     </div>
