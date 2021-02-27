@@ -28,7 +28,7 @@ new Vue({
       let reader = new FileReader()
       reader.onload = (e) => {
         console.log('length: ', e.target.result.includes('data:video/mpeg'))
-        if (!e.target.result.includes('data:bideo/mpeg')) {
+        if (!e.target.result.includes('data:video/mpeg')) {
         //  return alert('Wrong file type - JPG only.')
         }
         if (e.target.result.length > MAX_IMAGE_SIZE) {
